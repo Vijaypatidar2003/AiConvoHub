@@ -32,7 +32,8 @@ function SyntaxHighlightedCode(props) {
 
 const Project = () => {
 
-    const location = useLocation()
+    const location = useLocation();
+     const navigate = useNavigate();
 
     const [ isSidePanelOpen, setIsSidePanelOpen ] = useState(false)
     const [ isModalOpen, setIsModalOpen ] = useState(false)
@@ -191,6 +192,7 @@ const Project = () => {
                     <button onClick={() => setIsSidePanelOpen(!isSidePanelOpen)} className='p-2'>
                         <i className="ri-group-fill"></i>
                     </button>
+                     <button onClick={()=>navigate(-1)} className='border px-2 py-1'>Back</button>
                 </header>
                 <div className="conversation-area pt-14 pb-10 flex-grow flex flex-col h-full relative">
 
