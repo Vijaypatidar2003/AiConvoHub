@@ -38,15 +38,20 @@ const Home = () => {
 
   return (
     <main className="p-4">
-      <div className="projects flex flex-wrap gap-3">
-        <button
-          onClick={() => setIsModalOpen(!isModalOpen)}
-          className="project px-4 py-1 border border-slate-300 rounded-md"
-        >
-          New Project <i className="ri-link ml-2"></i>
-        </button>
+      <div className="projects flex flex-col relative gap-3">
+       <div>
+          <button
+            onClick={() => setIsModalOpen(!isModalOpen)}
+            className="project px-4 py-1 border border-slate-300 rounded-md"
+          >
+            New Project <i className="ri-link ml-2"></i>
+          </button>
 
-        {project.map((project) => (
+          <button onClick={()=>navigate(-1)}  className="border px-3 py-1 absolute right-0">back</button>
+        </div>
+
+       <div className="flex flex-col gap-1">
+       {project.map((project) => (
           <div
             key={project._id}
             onClick={() =>
@@ -65,6 +70,9 @@ const Home = () => {
             </div>
           </div>
         ))}
+
+       </div>
+       
 
         {/* <!-- Modal Background --> */}
         {isModalOpen && (
