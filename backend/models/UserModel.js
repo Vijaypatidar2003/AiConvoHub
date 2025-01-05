@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken"
 const userSchema = new mongoose.Schema({
     email:{
@@ -18,12 +18,12 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-userSchema.statics.hashPassword = async function(password){
-    return await bcrypt.hash(password,10);
+userSchema.statics.hashPassword =  function(password){
+    return  bcrypt.hashSync(password,10);
 }
 
-userSchema.methods.isValidPassword = async function(password){
-    return await bcrypt.compare(password,this.password);
+userSchema.methods.isValidPassword =  function(password){
+    return bcrypt.compareSync(password,this.password);
 }
 
 userSchema.methods.generateJWT = async function(){
