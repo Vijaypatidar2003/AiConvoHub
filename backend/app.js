@@ -14,6 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser())
 // app.use(cors());
+app.use(cors({
+    origin: 'https://aiconvohub-frontend.onrender.com',
+    credentials: true,
+}));
 
 
 
