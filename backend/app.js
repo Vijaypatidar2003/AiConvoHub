@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser())
 // app.use(cors());
-const cors = require('cors');
+
 app.use(cors({ origin: 'https://aiconvohub-frontend.onrender.com' }));
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://aiconvohub-frontend.onrender.com');
