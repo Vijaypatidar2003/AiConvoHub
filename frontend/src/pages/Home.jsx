@@ -22,7 +22,7 @@ const Home = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [project]);
 
   function createProject(e) {
     e.preventDefault();
