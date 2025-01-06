@@ -13,6 +13,7 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    localStorage.clear();
     axios
       .post("/users/login", { email: formData.email, password: formData.password })
       .then((res) => {
