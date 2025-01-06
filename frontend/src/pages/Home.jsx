@@ -41,7 +41,7 @@ const Home = () => {
   }
 
   return (
-    <main className="p-4">
+    <main className="p-4 h-screen w-screen">
       <div className="projects flex flex-col relative gap-3">
        <div>
           <button
