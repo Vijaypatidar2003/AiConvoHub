@@ -182,7 +182,7 @@ const Project = () => {
     }
 
     return (
-        <main class="w-full h-full max-w-screen max-h-screen overflow-hidden>
+        <main className="w-full h-full max-w-screen max-h-screen overflow-hidden>
             <section className="left relative flex flex-col h-screen min-w-96 bg-slate-300">
                 <header className='flex justify-between items-center p-2 px-4 w-full bg-slate-100 absolute z-10 top-0'>
                     <button className='flex gap-2' onClick={() => setIsModalOpen(true)}>
