@@ -17,7 +17,11 @@ const Home = () => {
       .get("/projects/all")
       .then((res) => {
         console.log(res.data);
-        setProject(res.data.projects);
+        const userProjects = allProjects.filter(project => 
+        project.users.includes(user._id)
+        );
+
+        setProject(userProjects);
       })
       .catch((error) => {
         console.log(error);
