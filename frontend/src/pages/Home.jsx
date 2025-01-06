@@ -17,7 +17,7 @@ const Home = () => {
       .get("/projects/all")
       .then((res) => {
         console.log(res.data);
-        const userProjects = allProjects.filter(project => 
+        const userProjects = res.data.projects.filter(project => 
         project.users.includes(user._id)
         );
 
