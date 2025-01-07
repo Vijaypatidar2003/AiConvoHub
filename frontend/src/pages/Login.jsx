@@ -13,12 +13,12 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    localStorage.clear();
+   
     axios
       .post("/users/login", { email: formData.email, password: formData.password })
       .then((res) => {
         console.log(res.data);
-        sessionStorage.setItem("token",res.data.token);
+        localStorage.setItem(`token_${res.data.user._id}`,res.data.token);
         setUser(res.data.user);
         navigate("/");
       })
