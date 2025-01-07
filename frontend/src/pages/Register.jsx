@@ -14,7 +14,7 @@ const Register = () => {
       .then((res)=>{
        
         console.log(res.data);
-        localStorage.setItem(`token_${res.data.user._id},res.data.token);
+        localStorage.setItem(`token`,res.data.token);
         setUser(res.data.user);
         navigate("/");
       })
