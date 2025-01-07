@@ -3,7 +3,7 @@ import socket from 'socket.io-client';
 let socketInstance = null;
 
 export const initializeSocket = (projectId)=>{
-    socketInstance = socket('https://aiconvohub-backend.vercel.app/',{
+    socketInstance = socket('https://aiconvohub-backend.vercel.app',{
         auth:{
             token:localStorage.getItem('token')
         },
