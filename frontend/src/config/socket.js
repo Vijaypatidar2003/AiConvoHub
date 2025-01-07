@@ -5,7 +5,7 @@ let socketInstance = null;
 export const initializeSocket = (projectId)=>{
     socketInstance = socket('https://aiconvohub-backend.onrender.com',{
         auth:{
-            token:localStorage.getItem('token')
+            token:sessionStorage.getItem('token')
         },
         query:{
             projectId
