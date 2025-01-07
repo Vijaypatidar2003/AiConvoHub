@@ -18,7 +18,7 @@ const Login = () => {
       .post("/users/login", { email: formData.email, password: formData.password })
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("token",res.data.token);
+        sessionStorage.setItem("token",res.data.token);
         setUser(res.data.user);
         navigate("/");
       })
