@@ -9,12 +9,12 @@ export const authUser = async (req, res, next)=>{
             return res.status(400).json({error:"Unauthorized User"});
         }
 
-        const isBlackListed = await redisClient.get(token);
+        // const isBlackListed = await redisClient.get(token);
 
-        if(isBlackListed){
-            res.cookie('token',"");
-            return res.status(400).json({error:"Unauthorized User"});
-        }
+        // if(isBlackListed){
+        //     res.cookie('token',"");
+        //     return res.status(400).json({error:"Unauthorized User"});
+        // }
 
         const decoded = jwt.verify(token,process.env.SECRET_KEY);
         req.user=decoded;
