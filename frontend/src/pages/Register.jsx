@@ -12,9 +12,9 @@ const Register = () => {
       e.preventDefault();
       axios.post("/users/register",{email:formData.email,password:formData.password})
       .then((res)=>{
-        sessionStorage.clear();
+       
         console.log(res.data);
-        sessionStorage.setItem('token',res.data.token);
+        localStorage.setItem(`token_${res.data.user._id},res.data.token);
         setUser(res.data.user);
         navigate("/");
       })
