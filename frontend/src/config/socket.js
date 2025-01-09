@@ -3,7 +3,7 @@ import socket from 'socket.io-client';
 let socketInstance = null;
 
 export const initializeSocket = (projectId)=>{
-    socketInstance = socket('https://aiconvohub-backend.onrender.com',{
+    socketInstance = socket('http://localhost:4000',{
         auth:{
             token:localStorage.getItem('token')
         },
