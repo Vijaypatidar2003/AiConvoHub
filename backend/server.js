@@ -15,7 +15,7 @@ const server = http.createServer(app);
 
 const io = new Server(server,{
     cors:{
-     origin: 'https://aiconvohub-frontend.onrender.com',
+     origin: 'http://localhost:300',
     credentials: true,
     }
 });
